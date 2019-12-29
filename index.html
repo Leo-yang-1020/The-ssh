@@ -1,0 +1,45 @@
+<html>
+<head>
+<titlle>利用powershell使用ssh并远程登录Linux操作</tittle>
+	</head>
+<body>
+
+<p>利用powershell使用ssh并远程登录Linux操作<?P>
+<h1>一.利用密码登录</h1>
+<p>输入指令ssh -p 54321  freshman@msstudio.club//    
+再输入密码即可。</P>
+
+
+
+<h2>二.利用密钥登录：</h2>
+<p>1.首先需要将密钥配置到.ssh目录，c:/users/.ssh
+创建一个id_rsa //这是密钥的格式，用文本类型储存
+将密钥粘贴到id_rsa中，配置完成。
+2.打开powershell，win+r使用cmd。
+先通过 cd .ssh到指定目录
+在终端中输入指令ssh -p 54321  freshman@msstudio.club -i id_rsa
+		//端口，如果不输入默认为22端口    //域名或ip地址 		       //配置的密钥文件<br>
+成功远程登录！<br>
+随后在Linux创建文件并用vim修改文件。
+创建方式通过cd /usr/freshman/找到储存路径，touch zzy 创建一个叫zzy的文件。<br>
+vim zzy.txt打开文件并编辑。</p>
+<h3>下列是查询到的保存方式。</h3>
+编辑完成之后，按ESC键 跳到命令模式（命令前面冒号是必要的）：
+
+　　 :w? ?保存文件但不退出vi
+
+　　 :w file 将修改另外保存到file中，不退出vi
+
+　　 :w!? ?强制保存，不推出vi
+
+　　 :wq? 保存文件并退出vi
+
+　　 :wq! 强制保存文件，并退出vi
+
+　　 :q? 不保存文件，退出vi
+
+　　 :q! 不保存文件，强制退出vi
+
+　　 :e! 放弃所有修改，从上次保存文件开始再编辑。
+之后通过 vi zzy.txt指令就可以查看文档。
+</body>
